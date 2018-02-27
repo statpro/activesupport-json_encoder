@@ -23,11 +23,11 @@ By default, ActiveSupport encodes `BigDecimal` objects as a string:
 { big_number: BigDecimal.new('12345678901234567890') }.to_json # => "{\"big_number\":\"12345678901234567890.0\"}"
 ```
 
-To change this, you can set `ActiveSupport.encode_big_decimal_as_string` to
+To change this, you can set `ActiveSupport::JSON::Encoding.encode_big_decimal_as_string` to
 `false`:
 
 ```ruby
-ActiveSupport.encode_big_decimal_as_string = false
+ActiveSupport::JSON::Encoding.encode_big_decimal_as_string = false
 { big_number: BigDecimal.new('12345678901234567890') }.to_json # => "{\"big_number\":12345678901234567890.0}"
 ```
 
